@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ note.title }}</mat-card-title>
+    <mat-card-subtitle
+      >Last Date Updated:
+      {{ note.lastUpdated | date : "shortDate" }}</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button *ngIf="!note.archived" (click)="archiveNote()">
+      <mat-icon>assignment_returned</mat-icon>
+    </button>
+    <button mat-button *ngIf="note.archived" (click)="restore()">
+      <mat-icon>assignment_return</mat-icon>
+    </button>
+    <button mat-button (click)="openPopup()"><mat-icon>build</mat-icon></button>
+    <button mat-button (click)="deleteNote()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

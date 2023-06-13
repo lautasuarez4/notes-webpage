@@ -1,0 +1,21 @@
+<div class="cn">
+  <h1 class="item">My Notes</h1>
+  <button type="button" class="btn btn-primary item" (click)="openPopup()">
+    Create Note
+  </button>
+  <a class="item" href="http://localhost:4200/archivedNotes">Archived Notes</a>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div
+      style="padding-bottom: 5px"
+      class="col-sm-6"
+      *ngFor="let note of noteList"
+    >
+      <app-note-card [note]="note" (reloadList)="list()"> </app-note-card>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

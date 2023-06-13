@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Create/Edit Notes</h1>
+<div mat-dialog-content>
+  <p>Enter a title for your note</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="note.title" />
+    <mat-label style="color: red">{{ titleError }}</mat-label>
+  </mat-form-field>
+  <p>Write here your note</p>
+  <mat-form-field style="display: flex">
+    <mat-label></mat-label>
+    <textarea matInput [(ngModel)]="note.content"></textarea>
+    <mat-label style="color: red">{{ contentError }}</mat-label>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+  <button mat-raised-button color="warn" (click)="closePopUp()">Close</button>
+</div>

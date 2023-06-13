@@ -1,0 +1,9 @@
+a {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.navbar {
+  margin-bottom: 10px;
+}
